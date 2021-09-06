@@ -38,7 +38,7 @@ enum StreamResponseError: Error {
 public class PharmaledgerMessageHandler: NSObject, CameraEventListener, WKScriptMessageHandler {
     private let logPreview = true;
     // const method to run inside the iframe from the leaflet app...
-    private let jsWindowPrefix = "document.getElementsByTagName('iframe')[0].contentWindow.";
+    private let jsWindowPrefix = "window.Native.Camera.";
     
     // MARK: public vars
     public var cameraSession: CameraSession?
