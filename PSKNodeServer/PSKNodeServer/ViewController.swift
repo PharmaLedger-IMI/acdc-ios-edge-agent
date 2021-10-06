@@ -8,6 +8,7 @@
 import UIKit
 import PSSmartWalletNativeLayer
 import WebKit
+import PharmaLedger_Camera
 
 class ViewController: UIViewController,WKUIDelegate {
     
@@ -22,7 +23,7 @@ class ViewController: UIViewController,WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let dirPath = Bundle.main.path(forResource: "nodejsProject", ofType: nil)
-        self.messageHandler = PharmaledgerMessageHandler(staticPath: dirPath)
+        self.messageHandler = PharmaledgerMessageHandler(staticPath: dirPath, jsWindowPrefix: "window.Native.Camera.")
         
         view.backgroundColor = Configuration.defaultInstance.webviewBackgroundColor
         
